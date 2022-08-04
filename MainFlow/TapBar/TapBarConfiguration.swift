@@ -59,7 +59,7 @@ private extension TabBarConfigurator {
 //            return FavoriteViewController()
             return setupNavigationController(rootViewController: FavoriteViewController())
         case .profile:
-            return ProfileViewController()
+            return setupNavigationController(rootViewController: ProfileViewController())
         }
     }
     
@@ -70,12 +70,13 @@ private extension TabBarConfigurator {
         let navigationController = UINavigationController.init(
             rootViewController: rootViewController)
         
-        let textAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)
-        ]
+//        let textAttributes = [
+//            NSAttributedString.Key.foregroundColor: UIColor.black,
+//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)
+//        ]
         
-        UINavigationBar.appearance().titleTextAttributes = textAttributes
+//        UINavigationBar.appearance().titleTextAttributes = textAttributes
+        UINavigationBar.appearance().tintColor = .black
         
         return navigationController
     }

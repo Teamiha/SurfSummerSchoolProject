@@ -12,9 +12,29 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: - NavigationController
         
+        let searchButton = UIBarButtonItem(
+            image: UIImage(named: "searchButton"),
+            style: .plain,
+            target: self,
+            action: #selector(moveToSearch)
+            )
+        
+        navigationItem.rightBarButtonItem = searchButton
+        navigationItem.title = "Главная"
+    }
 
-        // Do any additional setup after loading the view.
+//    @objc func moveToSearch() {
+//        let searchVC = SearchViewController()
+//        searchVC.modalPresentationStyle = .fullScreen
+//        present(searchVC, animated: true)
+//
+//    }
+    
+    @objc func moveToSearch() {
+        hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(SearchViewController(), animated: true)
     }
 
 

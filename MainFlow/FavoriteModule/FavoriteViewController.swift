@@ -20,26 +20,21 @@ class FavoriteViewController: UIViewController {
             target: self,
             action: #selector(moveToSearch)
             )
-
-        let attrs = [
-            NSAttributedString.Key.foregroundColor: UIColor.red,
-            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!
-        ]
-
-        UINavigationBar.appearance().titleTextAttributes = attrs
         
         navigationItem.rightBarButtonItem = searchButton
-        
-        
-        navigationItem.title = "Test"
+        navigationItem.title = "Избранное"
     }
 
+    
+    
     @objc func moveToSearch() {
-        let searchVC = SearchViewController()
-        present(searchVC, animated: true)
+        hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(SearchViewController(), animated: true)
         
         
     }
+    
+    
     /*
     // MARK: - Navigation
 
