@@ -18,6 +18,8 @@
 		4E99886A289ACD2300F765E0 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E998868289ACD2300F765E0 /* FavoriteViewController.xib */; };
 		4E998870289ACE6D00F765E0 /* TapBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E99886F289ACE6D00F765E0 /* TapBarModel.swift */; };
 		4E998872289AD04F00F765E0 /* TapBarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E998871289AD04F00F765E0 /* TapBarConfiguration.swift */; };
+		4E99887A289C155B00F765E0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E998878289C155B00F765E0 /* SearchViewController.swift */; };
+		4E99887B289C155B00F765E0 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E998879289C155B00F765E0 /* SearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		4E998868289ACD2300F765E0 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		4E99886F289ACE6D00F765E0 /* TapBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarModel.swift; sourceTree = "<group>"; };
 		4E998871289AD04F00F765E0 /* TapBarConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarConfiguration.swift; sourceTree = "<group>"; };
+		4E998878289C155B00F765E0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4E998879289C155B00F765E0 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,12 +126,22 @@
 		4E998860289ACCC400F765E0 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				4E998877289C153500F765E0 /* SearchModule */,
 				4E99885E289ACCA100F765E0 /* TapBar */,
 				4E99885D289ACC9000F765E0 /* FavoriteModule */,
 				4E99885C289ACC8400F765E0 /* ProfileModule */,
 				4E99885B289ACC7800F765E0 /* MainModule */,
 			);
 			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		4E998877289C153500F765E0 /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				4E998878289C155B00F765E0 /* SearchViewController.swift */,
+				4E998879289C155B00F765E0 /* SearchViewController.xib */,
+			);
+			path = SearchModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +204,7 @@
 			files = (
 				4E99884F2899640800F765E0 /* LaunchScreen.storyboard in Resources */,
 				4E99885A289ACC6900F765E0 /* MainViewController.xib in Resources */,
+				4E99887B289C155B00F765E0 /* SearchViewController.xib in Resources */,
 				4E998864289ACCF700F765E0 /* ProfileViewController.xib in Resources */,
 				4E99886A289ACD2300F765E0 /* FavoriteViewController.xib in Resources */,
 				4E99884C2899640800F765E0 /* Assets.xcassets in Resources */,
@@ -204,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E998863289ACCF700F765E0 /* ProfileViewController.swift in Sources */,
+				4E99887A289C155B00F765E0 /* SearchViewController.swift in Sources */,
 				4E9988432899640500F765E0 /* AppDelegate.swift in Sources */,
 				4E998872289AD04F00F765E0 /* TapBarConfiguration.swift in Sources */,
 				4E998869289ACD2300F765E0 /* FavoriteViewController.swift in Sources */,

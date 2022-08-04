@@ -22,6 +22,7 @@ final class TabBarConfigurator {
 
 }
 
+
 // MARK: - Private Methods
 
 private extension TabBarConfigurator {
@@ -55,7 +56,8 @@ private extension TabBarConfigurator {
 //            return MainViewController()
             return setupNavigationController(rootViewController: MainViewController())
         case .favorite:
-            return FavoriteViewController()
+//            return FavoriteViewController()
+            return setupNavigationController(rootViewController: FavoriteViewController())
         case .profile:
             return ProfileViewController()
         }
@@ -64,21 +66,21 @@ private extension TabBarConfigurator {
 // MARK: - NavigationController
     
     func setupNavigationController(rootViewController: UIViewController) ->
-        UIViewController {
-        let navigationController = UINavigationController.init(rootViewController: rootViewController)
-
-        let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: nil)
+    UIViewController {
+        let navigationController = UINavigationController.init(
+            rootViewController: rootViewController)
         
+        let textAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)
+        ]
         
-        navigationController.navigationBar.topItem?.setRightBarButtonItems([searchButton], animated: true)
+        UINavigationBar.appearance().titleTextAttributes = textAttributes
         
-        
-
-//        navigationController.navigationBar.backgroundColor = .purple
-
-
         return navigationController
     }
+    
 
 }
+
 
