@@ -19,10 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.overrideUserInterfaceStyle = .light
         }
 
+        runMainFlow()
 
         return true
     }
+    
+    func runMainFlow() {
+        window?.rootViewController = TabBarConfigurator().configure()
 
+    }
 
 }
 
