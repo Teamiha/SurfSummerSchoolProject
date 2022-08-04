@@ -9,8 +9,22 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    
+    //MARK: - Private Property
+    
+    private let model: MainModel = .init()
+    
+    //MARK: - Views
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureApperance()
+        configurateModel()
+        model.getPosts()
         
         // MARK: - NavigationController
         
@@ -25,27 +39,37 @@ class MainViewController: UIViewController {
         navigationItem.title = "Главная"
     }
 
-//    @objc func moveToSearch() {
-//        let searchVC = SearchViewController()
-//        searchVC.modalPresentationStyle = .fullScreen
-//        present(searchVC, animated: true)
-//
-//    }
     
     @objc func moveToSearch() {
         hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(SearchViewController(), animated: true)
     }
+}
 
+//MARK: - Private Methods
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+private extension MainViewController {
+    
+    func configureApperance() {
+        collectionView.dataSource = self
     }
-    */
+    
+    func configurateModel() {
+        model.didItemsUpdated = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
+}
 
+// MARK: - UICollection
+
+extension MainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
 }

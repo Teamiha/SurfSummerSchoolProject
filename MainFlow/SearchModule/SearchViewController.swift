@@ -17,7 +17,6 @@ class SearchViewController: UIViewController {
         navigationItem.leftBarButtonItem = button
         navigationItem.title = "Поиск"
 
-        // Do any additional setup after loading the view.
     }
 
 
