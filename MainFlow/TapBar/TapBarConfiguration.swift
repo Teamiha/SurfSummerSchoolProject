@@ -42,9 +42,11 @@ private extension TabBarConfigurator {
 
         allTab.forEach { tab in
             let controller = getCurrentViewController(tab: tab)
+            let navigationController = UINavigationController(rootViewController: controller)
+            setupNavigationController()
             let tabBarItem = UITabBarItem(title: tab.title, image: tab.image, selectedImage: tab.selectedImage)
             controller.tabBarItem = tabBarItem
-            viewControllers.append(controller)
+            viewControllers.append(navigationController)
         }
 
         return viewControllers
@@ -53,32 +55,24 @@ private extension TabBarConfigurator {
     func getCurrentViewController(tab: TabBarModel) -> UIViewController {
         switch tab {
         case .main:
-//            return MainViewController()
-            return setupNavigationController(rootViewController: MainViewController())
+            return MainViewController()
         case .favorite:
-//            return FavoriteViewController()
-            return setupNavigationController(rootViewController: FavoriteViewController())
+            return FavoriteViewController()
         case .profile:
-            return setupNavigationController(rootViewController: ProfileViewController())
+            return ProfileViewController()
         }
     }
     
 // MARK: - NavigationController
     
-    func setupNavigationController(rootViewController: UIViewController) ->
-    UIViewController {
-        let navigationController = UINavigationController.init(
-            rootViewController: rootViewController)
+    func setupNavigationController() {
         
-//        let textAttributes = [
-//            NSAttributedString.Key.foregroundColor: UIColor.black,
+//       let textAttributes = [
 //            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)
 //        ]
         
-//        UINavigationBar.appearance().titleTextAttributes = textAttributes
+//      UINavigationBar.appearance().titleTextAttributes = textAttributes
         UINavigationBar.appearance().tintColor = .black
-        
-        return navigationController
     }
     
 

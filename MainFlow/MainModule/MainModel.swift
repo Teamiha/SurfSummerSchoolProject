@@ -33,7 +33,7 @@ final class MainModel {
 struct ItemModel {
     let image: UIImage?
     let title: String
-    let isFavorite: Bool
+    var isFavorite: Bool
     let dateCreation: String
     let content: String
     

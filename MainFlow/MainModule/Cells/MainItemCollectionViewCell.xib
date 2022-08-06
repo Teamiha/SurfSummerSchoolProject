@@ -16,14 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="315" height="457"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nKz-cB-wFD">
-                        <rect key="frame" x="0.0" y="0.0" width="315" height="416.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nKz-cB-wFD">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="420.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="nKz-cB-wFD" secondAttribute="height" multiplier="168:222" priority="750" id="Ag5-Za-jzL"/>
+                            <constraint firstAttribute="width" secondItem="nKz-cB-wFD" secondAttribute="height" multiplier="168:222" priority="250" id="Ag5-Za-jzL"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x20-9T-sXR">
-                        <rect key="frame" x="0.0" y="424.5" width="315" height="24.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x20-9T-sXR">
+                        <rect key="frame" x="0.0" y="428.5" width="315" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,6 +36,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="favoriteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="fjc-ao-yQd"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -52,6 +55,11 @@
                 <constraint firstItem="nKz-cB-wFD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vCr-qZ-Uew"/>
             </constraints>
             <size key="customSize" width="315" height="457"/>
+            <connections>
+                <outlet property="favoriteButton" destination="dnN-Jq-TYa" id="b61-01-LqX"/>
+                <outlet property="imageView" destination="nKz-cB-wFD" id="Jq5-rH-p8S"/>
+                <outlet property="titleLabel" destination="x20-9T-sXR" id="FiV-Vf-8Vn"/>
+            </connections>
             <point key="canvasLocation" x="329.71014492753625" y="118.19196428571428"/>
         </collectionViewCell>
     </objects>
