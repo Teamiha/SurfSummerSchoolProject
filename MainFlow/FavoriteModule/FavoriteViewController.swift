@@ -28,7 +28,6 @@ class FavoriteViewController: UIViewController {
     
     
     @objc func moveToSearch() {
-        hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(SearchViewController(), animated: true)
         
         

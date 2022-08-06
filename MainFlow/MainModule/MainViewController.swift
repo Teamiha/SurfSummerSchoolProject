@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
         configureApperance()
         configurateModel()
         model.getPosts()
+        model.items[5].isFavorite = true
         
         // MARK: - NavigationController
         
@@ -48,7 +49,6 @@ class MainViewController: UIViewController {
 
     
     @objc func moveToSearch() {
-        hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(SearchViewController(), animated: true)
     }
 }
@@ -74,6 +74,7 @@ private extension MainViewController {
 // MARK: - UICollection
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.items.count
     }
@@ -105,4 +106,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         return Constants.spaceBetweenElements
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.model = model.items[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
