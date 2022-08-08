@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FavoriteCollectionViewCell" customModule="SurfSummerSchoolProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="550"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="550"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-qp-skb">
+                        <rect key="frame" x="16" y="24" width="366" height="385"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="a8X-qp-skb" secondAttribute="height" multiplier="326:343" id="RAz-2M-UhJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-x4-OtO">
+                        <rect key="frame" x="16" y="425" width="42" height="31"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAh-Oh-mBA">
+                        <rect key="frame" x="329" y="430" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owb-22-cfX">
+                        <rect key="frame" x="16" y="464" width="351" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-QG-JPo">
+                        <rect key="frame" x="344" y="40" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="R0m-DF-zDw"/>
+                            <constraint firstAttribute="width" constant="24" id="brQ-au-6pf"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                        <connections>
+                            <action selector="favoriteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="LTg-CB-uMY"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="hAh-Oh-mBA" secondAttribute="trailing" constant="27" id="2fh-eH-Hag"/>
+                <constraint firstItem="owb-22-cfX" firstAttribute="top" secondItem="DCs-x4-OtO" secondAttribute="bottom" constant="8" id="5qE-cm-BeU"/>
+                <constraint firstItem="a8X-qp-skb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="5w2-xd-lUz"/>
+                <constraint firstItem="a8X-qp-skb" firstAttribute="top" secondItem="ceE-QG-JPo" secondAttribute="bottom" constant="-40" id="8W4-QF-2gE"/>
+                <constraint firstItem="owb-22-cfX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="FWk-Wf-w0i"/>
+                <constraint firstAttribute="trailing" secondItem="owb-22-cfX" secondAttribute="trailing" constant="31" id="JAO-W5-Kj0"/>
+                <constraint firstItem="ceE-QG-JPo" firstAttribute="leading" secondItem="a8X-qp-skb" secondAttribute="trailing" constant="-38" id="KY5-KE-K4d"/>
+                <constraint firstItem="owb-22-cfX" firstAttribute="top" secondItem="hAh-Oh-mBA" secondAttribute="bottom" constant="13" id="UrC-Hf-yG5"/>
+                <constraint firstItem="hAh-Oh-mBA" firstAttribute="top" secondItem="a8X-qp-skb" secondAttribute="bottom" constant="21" id="eRJ-Es-IhJ"/>
+                <constraint firstAttribute="trailing" secondItem="a8X-qp-skb" secondAttribute="trailing" constant="16" id="fv5-qy-GtT"/>
+                <constraint firstItem="DCs-x4-OtO" firstAttribute="top" secondItem="a8X-qp-skb" secondAttribute="bottom" constant="16" id="ri5-q6-a8J"/>
+                <constraint firstItem="hAh-Oh-mBA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DCs-x4-OtO" secondAttribute="trailing" constant="282" id="tgI-uv-ibp"/>
+                <constraint firstItem="a8X-qp-skb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="wXP-xo-s61"/>
+                <constraint firstItem="DCs-x4-OtO" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="16" id="x4O-eO-m0c"/>
+            </constraints>
+            <size key="customSize" width="398" height="550"/>
+            <connections>
+                <outlet property="favoriteButton" destination="ceE-QG-JPo" id="wzq-0X-0xZ"/>
+                <outlet property="favoriteDate" destination="hAh-Oh-mBA" id="lsp-yI-MuS"/>
+                <outlet property="favoriteImage" destination="a8X-qp-skb" id="yxC-UU-TZf"/>
+                <outlet property="favoriteText" destination="owb-22-cfX" id="LAS-l3-nDW"/>
+                <outlet property="favoriteTitle" destination="DCs-x4-OtO" id="rXR-uU-Yyw"/>
+            </connections>
+            <point key="canvasLocation" x="269.56521739130437" y="238.39285714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>

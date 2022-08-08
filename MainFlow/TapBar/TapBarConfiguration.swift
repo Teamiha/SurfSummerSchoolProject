@@ -73,6 +73,7 @@ private extension TabBarConfigurator {
         
 //      UINavigationBar.appearance().titleTextAttributes = textAttributes
         UINavigationBar.appearance().tintColor = .black
+        
     }
     
 

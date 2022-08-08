@@ -13,11 +13,6 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         configureNavigationBar()
         self.tabBarController?.tabBar.isHidden = true
-//        let image = UIImage(named: "back-arrow")
-//        let button = UIBarButtonItem(image: image, style: .plain, target: self, action: nil)
-//
-//        navigationItem.leftBarButtonItem = button
-//        navigationItem.title = "Поиск"
 
     }
 

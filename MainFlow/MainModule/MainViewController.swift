@@ -33,24 +33,9 @@ class MainViewController: UIViewController {
         configurateModel()
         model.getPosts()
         model.items[5].isFavorite = true
-        
-        // MARK: - NavigationController
-        
-        let searchButton = UIBarButtonItem(
-            image: UIImage(named: "searchButton"),
-            style: .plain,
-            target: self,
-            action: #selector(moveToSearch)
-            )
-        
-        navigationItem.rightBarButtonItem = searchButton
-        navigationItem.title = "Главная"
+        configureNavigationBar()
     }
-
-    
-    @objc func moveToSearch() {
-        navigationController?.pushViewController(SearchViewController(), animated: true)
-    }
+ 
 }
 
 //MARK: - Private Methods
@@ -69,6 +54,24 @@ private extension MainViewController {
             self?.collectionView.reloadData()
         }
     }
+    
+    func configureNavigationBar() {
+        navigationItem.title = "Избранное"
+        
+        let searchButton = UIBarButtonItem(
+            image: UIImage(named: "searchButton"),
+            style: .plain,
+            target: self,
+            action: #selector(moveToSearch)
+            )
+        
+        navigationItem.rightBarButtonItem = searchButton
+    }
+    
+    @objc func moveToSearch() {
+        navigationController?.pushViewController(SearchViewController(), animated: true)
+    }
+    
 }
 
 // MARK: - UICollection
