@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 final class FavoriteModel {
-    
-    
 
     // MARK: - Events
 
@@ -18,7 +16,7 @@ final class FavoriteModel {
 
     // MARK: - Properties
 
-    var items: [DetailItemModel] = [] {
+    var items: [TestModel] = [] {
         didSet {
             didItemsUpdated?()
         }
@@ -27,7 +25,7 @@ final class FavoriteModel {
     // MARK: - Methods
 
     func getPosts() {
-        items = Array(repeating: DetailItemModel.createDefault(), count: 100)
+        items = Array(repeating: TestModel.createDefault(), count: 100)
     }
 
 }

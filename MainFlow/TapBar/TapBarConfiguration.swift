@@ -66,12 +66,6 @@ private extension TabBarConfigurator {
 // MARK: - NavigationController
     
     func setupNavigationController() {
-        
-//       let textAttributes = [
-//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)
-//        ]
-        
-//      UINavigationBar.appearance().titleTextAttributes = textAttributes
         UINavigationBar.appearance().tintColor = .black
         
     }

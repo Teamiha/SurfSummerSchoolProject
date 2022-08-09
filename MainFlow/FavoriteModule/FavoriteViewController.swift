@@ -17,7 +17,7 @@ class FavoriteViewController: UIViewController {
     
     //MARK: - Private Property
     
-    private let model: MainModel = .init()
+    private var model: FavoriteModel = .init()
     
     // MARK: - Views
     
@@ -31,8 +31,6 @@ class FavoriteViewController: UIViewController {
         configurateModel()
         model.getPosts()
         configureNavigationBar()
-
-        
     }
 
 }
@@ -101,9 +99,10 @@ extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDe
         return CGSize(width: UIScreen.main.bounds.width, height: Constants.cellHeight)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailViewController()
-        vc.model = model.items[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
-    }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let vc = DetailViewController()
+//        vc.model = model.items[indexPath.row]
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
 }

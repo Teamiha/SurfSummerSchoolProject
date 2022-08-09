@@ -30,9 +30,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureApperance()
-        configurateModel()
-        model.getPosts()
-        model.items[5].isFavorite = true
+        configureModel()
+        model.loadPosts()
+//        model.items[5].isFavorite = true
         configureNavigationBar()
     }
  
@@ -49,14 +49,16 @@ private extension MainViewController {
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
     }
     
-    func configurateModel() {
+    func configureModel() {
         model.didItemsUpdated = { [weak self] in
-            self?.collectionView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self?.collectionView.reloadData()
+            }
         }
     }
     
     func configureNavigationBar() {
-        navigationItem.title = "Избранное"
+        navigationItem.title = "Главная"
         
         let searchButton = UIBarButtonItem(
             image: UIImage(named: "searchButton"),
@@ -88,7 +90,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let item = model.items[indexPath.row]
             cell.title = item.title
             cell.isFavorite = item.isFavorite
-            cell.image = item.image
+            cell.imageUrlInString = item.imageUrlInString
             cell.didFavoriteTaped = { [weak self] in
                 self?.model.items[indexPath.row].isFavorite.toggle()
             }
