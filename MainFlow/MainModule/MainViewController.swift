@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     //MARK: - Views
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Lifecycle
     
@@ -32,8 +33,9 @@ class MainViewController: UIViewController {
         configureApperance()
         configureModel()
         model.loadPosts()
-//        model.items[5].isFavorite = true
         configureNavigationBar()
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
  
 }
@@ -51,8 +53,9 @@ private extension MainViewController {
     
     func configureModel() {
         model.didItemsUpdated = { [weak self] in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 self?.collectionView.reloadData()
+                self?.activityIndicator.stopAnimating()
             }
         }
     }

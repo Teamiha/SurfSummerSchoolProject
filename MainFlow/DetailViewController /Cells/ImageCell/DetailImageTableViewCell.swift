@@ -20,7 +20,7 @@ class DetailImageTableViewCell: UITableViewCell {
             guard let url = URL(string: imageUrlInString) else {
                 return
             }
-            imageView?.loadImage(from: url)
+            cartImageView?.loadImage(from: url)
         }
     }
 
