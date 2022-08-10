@@ -25,6 +25,16 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    
+    
+    
+    //MARK: - Actions
+    
+    @IBAction func errorButonReload(_ sender: UIButton) {
+        model.loadPosts()
+        self.collectionView.isHidden = false
+    }
     
     //MARK: - Lifecycle
     
@@ -57,6 +67,11 @@ private extension MainViewController {
                 self?.collectionView.reloadData()
                 self?.activityIndicator.stopAnimating()
             }
+        }
+        model.errorState = {
+//            self.errorStackView.isHidden = false
+            self.collectionView.isHidden = true
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -116,6 +131,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailViewController()
+        
         vc.model = model.items[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }

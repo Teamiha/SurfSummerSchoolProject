@@ -152,9 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				4EB12E6428A2A84B0056917A /* Model */,
-				4ED06DFA289C5623001A1324 /* Cells */,
 				4E998857289ACC6900F765E0 /* MainViewController.swift */,
 				4E998858289ACC6900F765E0 /* MainViewController.xib */,
+				4ED06DFA289C5623001A1324 /* Cells */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";

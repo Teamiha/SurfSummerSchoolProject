@@ -13,6 +13,7 @@ final class MainModel {
     // MARK: - Events
 
     var didItemsUpdated: (() -> Void)?
+    var errorState: (() -> Void)?
 
     // MARK: - Properties
 
@@ -39,8 +40,8 @@ final class MainModel {
                     )
                 }
             case .failure(let error):
-                // TODO: - Implement error state there
-                break
+                self?.errorState
+                
             }
         }
     }
