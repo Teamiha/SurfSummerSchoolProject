@@ -25,13 +25,12 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
-    
-    
+    @IBOutlet weak var errorStackView: UIStackView!
     
     //MARK: - Actions
     
     @IBAction func errorButonReload(_ sender: UIButton) {
+        activityIndicator.startAnimating()
         model.loadPosts()
         self.collectionView.isHidden = false
     }
@@ -40,14 +39,23 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorStackView.isHidden = true
         configureApperance()
         configureModel()
         model.loadPosts()
         configureNavigationBar()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
+        errorLoadPictures()
     }
  
+// MARK: - Methods
+    
+    func errorLoadPictures() {
+        if model.errorStateIsTrue == true {
+            errorScreenShow()
+        }
+    }
 }
 
 //MARK: - Private Methods
@@ -68,11 +76,6 @@ private extension MainViewController {
                 self?.activityIndicator.stopAnimating()
             }
         }
-        model.errorState = {
-//            self.errorStackView.isHidden = false
-            self.collectionView.isHidden = true
-            self.activityIndicator.stopAnimating()
-        }
     }
     
     func configureNavigationBar() {
@@ -90,6 +93,12 @@ private extension MainViewController {
     
     @objc func moveToSearch() {
         navigationController?.pushViewController(SearchViewController(), animated: true)
+    }
+    
+    func errorScreenShow() {
+        self.errorStackView.isHidden = false
+        self.collectionView.isHidden = true
+        self.activityIndicator.stopAnimating()
     }
     
 }

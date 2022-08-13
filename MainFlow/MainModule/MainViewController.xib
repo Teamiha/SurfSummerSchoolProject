@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="xx4-AR-683" id="aK7-w2-o5A"/>
                 <outlet property="collectionView" destination="dlD-Ya-Lfc" id="AZH-hF-y8L"/>
+                <outlet property="errorStackView" destination="FL0-Hv-KyN" id="egU-w9-pQh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

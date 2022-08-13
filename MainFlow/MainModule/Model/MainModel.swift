@@ -13,8 +13,9 @@ final class MainModel {
     // MARK: - Events
 
     var didItemsUpdated: (() -> Void)?
-    var errorState: (() -> Void)?
-
+    
+    var errorStateIsTrue = false
+    
     // MARK: - Properties
 
     let pictureService = PicturesService()
@@ -39,12 +40,13 @@ final class MainModel {
                         dateCreation: pictureModel.date
                     )
                 }
-            case .failure(let error):
-                self?.errorState
-                
+            case .failure(_):
+                self?.errorStateIsTrue = true
             }
         }
     }
 
 }
+
+
 
