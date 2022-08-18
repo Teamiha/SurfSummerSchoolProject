@@ -72,7 +72,7 @@ private extension MainViewController {
     func configureModel() {
         model.didItemsUpdated = { [weak self] in
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self?.collectionView.reloadData()
+//                self?.collectionView.reloadData()
                 self?.activityIndicator.stopAnimating()
             }
         }
