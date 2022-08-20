@@ -36,7 +36,7 @@ final class MainModel {
                         id: pictureModel.id,
                         imageUrlInString: pictureModel.photoUrl,
                         title: pictureModel.title,
-                        isFavorite: false, // TODO: - Need adding `FavoriteService`
+                        isFavorite: StorageManager.shared.checkIfElementFavorite(id: pictureModel.id),
                         content: pictureModel.content,
                         dateCreation: pictureModel.date
                     )

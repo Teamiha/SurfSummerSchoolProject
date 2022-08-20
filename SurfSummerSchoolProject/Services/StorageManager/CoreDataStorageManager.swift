@@ -58,12 +58,7 @@ class StorageManager {
     
     func addPictureFavoriteStatus(model: DetailItemModel) {
 
-        ff()
-//        let pic = pics[0]
-//
-//        pic.id = model.id
-//        pic.favorite = model.isFavorite
-        
+
         print("TEST")
         if pics.isEmpty {
             print("NEW START ID")
@@ -77,7 +72,7 @@ class StorageManager {
                 if model.id == pics[elements].id {
                     pics[elements].favorite.toggle()
                     saveContext()
-                    
+
                     print("----------------------")
                     print("id выбранного элемента \(model.id)")
 //                    print("Статус выбранного элемента \(model.isFavorite)")
@@ -85,8 +80,8 @@ class StorageManager {
                     print("Статус целевого элемента: \(pics[elements].favorite)")
                     print("Количество элементов: \(pics.count)")
                     print("----------------------")
-            
-            
+
+
         }
             }
         } else {
@@ -100,22 +95,46 @@ class StorageManager {
 
     }
     
-    func changeFavoriteStatus(model: DetailItemModel) {
+//    func changeFavoriteStatus(model: DetailItemModel) {
+////        ff()
+//        if let element = pics.firstIndex(where: {$0.id == model.id}) {
+//            pics.remove(at: element)
+//            var pic = FavoriteItem(context: viewContext)
+//            if pic.id == model.id {
+//                pic = nil
+//            }
+//
+////            let test = pics.filter({$0.id == model.id})
+////            viewContext.
+//            saveContext()
+//            print("----------------------")
+//            print("Element Remove")
+//            print("Количество элементов: \(pics.count)")
+//            print("----------------------")
+//        } else {
+//            let pic = FavoriteItem(context: viewContext)
+//            pic.id = model.id
+//            saveContext()
+//
+//
+//            print("----------------------")
+//            print("Element Add")
+//            print("Количество элементов: \(pics.count)")
+//            print("----------------------")
+//        }
+//    }
+    
+    func initFavoriteStorage() {
         ff()
-        if pics.contains(where: { $0.id == model.id }) == true {
-            viewContext.delete(pics[model.id])
-            
-        }
     }
     
     
     
-    
-    
-//    func checkIfElementFavorite(id: String) -> Bool {
-//
-//    }
-            
+    func checkIfElementFavorite(id: String) -> Bool {
+        guard let element = pics.first(where: { $0.id == id}) else { return false }
+        return element.favorite
+    }
+
 
 
     // MARK: - Core Data Saving support

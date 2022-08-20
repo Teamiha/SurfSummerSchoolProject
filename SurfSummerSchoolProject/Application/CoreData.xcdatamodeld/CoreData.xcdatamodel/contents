@@ -5,6 +5,6 @@
         <attribute name="id" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="FavoriteItem" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="FavoriteItem" positionX="-4409.234375" positionY="-123.1640625" width="241.62109375" height="59"/>
     </elements>
 </model>

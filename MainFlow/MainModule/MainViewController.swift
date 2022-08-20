@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        StorageManager.shared.initFavoriteStorage()
         errorStackView.isHidden = true
         configureApperance()
         configureModel()
