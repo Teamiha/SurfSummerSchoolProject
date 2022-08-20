@@ -5,6 +5,7 @@
 //  Created by Михаил Светлов on 03.08.2022.
 //
 
+import CoreData
 import UIKit
 
 class MainViewController: UIViewController {
@@ -72,7 +73,7 @@ private extension MainViewController {
     func configureModel() {
         model.didItemsUpdated = { [weak self] in
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//                self?.collectionView.reloadData()
+                self?.collectionView.reloadData()
                 self?.activityIndicator.stopAnimating()
             }
         }
@@ -120,6 +121,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.imageUrlInString = item.imageUrlInString
             cell.didFavoriteTaped = { [weak self] in
                 self?.model.items[indexPath.row].isFavorite.toggle()
+                StorageManager.shared.addPictureFavoriteStatus(model: item)
             }
         }
         return cell

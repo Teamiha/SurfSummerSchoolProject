@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dlD-Ya-Lfc">
-                    <rect key="frame" x="0.0" y="44" width="414" height="766"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="753"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LL0-kJ-OgW">
                         <size key="itemSize" width="128" height="128"/>
@@ -32,10 +32,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xx4-AR-683">
-                    <rect key="frame" x="197" y="412" width="20" height="20"/>
+                    <rect key="frame" x="197" y="405.5" width="20" height="20"/>
                 </activityIndicatorView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="FL0-Hv-KyN">
-                    <rect key="frame" x="16" y="313" width="382" height="141"/>
+                    <rect key="frame" x="16" y="313" width="382" height="128"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="nMd-uR-ncU">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="26"/>
@@ -44,7 +44,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не удалось загрузить ленту Обновите экран или попробуйте позже" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iE-65-612">
-                            <rect key="frame" x="0.0" y="40" width="382" height="33.5"/>
+                            <rect key="frame" x="0.0" y="40" width="382" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="0iE-65-612" secondAttribute="height" multiplier="343:37" id="fTw-SW-fhY"/>
                             </constraints>
@@ -53,7 +53,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMK-Vx-iw0">
-                            <rect key="frame" x="0.0" y="87.5" width="382" height="53.5"/>
+                            <rect key="frame" x="0.0" y="95" width="382" height="33"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="JMK-Vx-iw0" secondAttribute="height" multiplier="343:48" id="QkT-eK-VZL"/>
                             </constraints>
