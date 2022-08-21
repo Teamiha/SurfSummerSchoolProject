@@ -17,8 +17,8 @@ class FavoriteViewController: UIViewController {
     
     //MARK: - Private Property
     
-    private var model: FavoriteModel = .init()
-    
+    private var model: MainModel = .init()
+    private var filteredElements: [DetailItemModel] = []
     // MARK: - Views
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -29,8 +29,14 @@ class FavoriteViewController: UIViewController {
         super.viewDidLoad()
         configureApperance()
         configurateModel()
-        model.getPosts()
+        model.loadPosts()
         configureNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        model.loadPosts()
+        filteredElements = filteredModel()
     }
 
 }
@@ -50,6 +56,11 @@ private extension FavoriteViewController {
         model.didItemsUpdated = { [weak self] in
             self?.collectionView.reloadData()
         }
+    }
+    
+    func filteredModel() -> [DetailItemModel] {
+       let rezult =  model.items.filter({$0.isFavorite == true})
+        return rezult
     }
     
     func configureNavigationBar() {
@@ -76,20 +87,22 @@ private extension FavoriteViewController {
 extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.items.count
+        return filteredModel().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(FavoriteCollectionViewCell.self)", for: indexPath)
         if let cell = cell as? FavoriteCollectionViewCell {
-            let item = model.items[indexPath.row]
+            let item = filteredElements[indexPath.row]
             cell.text = item.content
             cell.date = item.dateCreation
             cell.title = item.title
             cell.isFavorite = item.isFavorite
-            cell.image = item.image
+            cell.imageUrlInString = item.imageUrlInString
             cell.didFavoritesTapped = { [weak self] in
-                self?.model.items[indexPath.row].isFavorite.toggle()
+                self?.filteredElements[indexPath.row].isFavorite.toggle()
+                //FIX BUG. ADD REMOVE SYSTEM
+//                StorageManager.shared.addPictureFavoriteStatus(model: item)
             }
         }
         return cell
@@ -99,10 +112,9 @@ extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDe
         return CGSize(width: UIScreen.main.bounds.width, height: Constants.cellHeight)
     }
     
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = DetailViewController()
-//        vc.model = model.items[indexPath.row]
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.model = model.items[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

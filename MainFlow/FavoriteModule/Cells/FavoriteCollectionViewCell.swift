@@ -36,9 +36,12 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
 
-    var image: UIImage? {
+    var imageUrlInString: String = "" {
         didSet {
-            favoriteImage.image = image
+            guard let url = URL(string: imageUrlInString) else {
+                return
+            }
+            favoriteImage.loadImage(from: url)
         }
     }
     var isFavorite: Bool = false {

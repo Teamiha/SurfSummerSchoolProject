@@ -16,7 +16,7 @@ final class FavoriteModel {
 
     // MARK: - Properties
 
-    var items: [TestModel] = [] {
+    var items: [MainModel] = [] {
         didSet {
             didItemsUpdated?()
         }
@@ -24,8 +24,8 @@ final class FavoriteModel {
 
     // MARK: - Methods
 
-    func getPosts() {
-        items = Array(repeating: TestModel.createDefault(), count: 100)
-    }
+//    func getPosts() {
+//        items = Array(repeating: TestModel.createDefault(), count: 100)
+//    }
 
 }
