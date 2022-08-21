@@ -5,6 +5,7 @@
 //  Created by Михаил Светлов on 03.08.2022.
 //
 
+import CoreData
 import UIKit
 
 class MainViewController: UIViewController {
@@ -39,6 +40,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        StorageManager.shared.initFavoriteStorage()
         errorStackView.isHidden = true
         configureApperance()
         configureModel()
@@ -120,6 +122,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.imageUrlInString = item.imageUrlInString
             cell.didFavoriteTaped = { [weak self] in
                 self?.model.items[indexPath.row].isFavorite.toggle()
+                StorageManager.shared.addPictureFavoriteStatus(model: item)
             }
         }
         return cell

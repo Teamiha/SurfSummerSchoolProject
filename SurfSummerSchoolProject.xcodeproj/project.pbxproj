@@ -20,7 +20,6 @@
 		4E998872289AD04F00F765E0 /* TapBarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E998871289AD04F00F765E0 /* TapBarConfiguration.swift */; };
 		4E99887A289C155B00F765E0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E998878289C155B00F765E0 /* SearchViewController.swift */; };
 		4E99887B289C155B00F765E0 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E998879289C155B00F765E0 /* SearchViewController.xib */; };
-		4EB12E4028A168950056917A /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12E3F28A168950056917A /* FavoriteModel.swift */; };
 		4EB12E4928A2A7360056917A /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12E4828A2A7360056917A /* EmptyModel.swift */; };
 		4EB12E4B28A2A7500056917A /* BaseNetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12E4A28A2A7500056917A /* BaseNetworkTask.swift */; };
 		4EB12E4D28A2A7610056917A /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12E4C28A2A7610056917A /* NetworkMethod.swift */; };
@@ -35,7 +34,6 @@
 		4EB12E5F28A2A7F80056917A /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12E5E28A2A7F80056917A /* TokenStorage.swift */; };
 		4EB12E6128A2A8040056917A /* TokenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12E6028A2A8040056917A /* TokenContainer.swift */; };
 		4EB12E6328A2A8140056917A /* BaseTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12E6228A2A8140056917A /* BaseTokenStorage.swift */; };
-		4EB12E6628A2BFF20056917A /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12E6528A2BFF20056917A /* TestModel.swift */; };
 		4ECF0C8F28A9255800F52E3A /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF0C8D28A9255800F52E3A /* CoreData.xcdatamodeld */; };
 		4ECF0C9228A92B2C00F52E3A /* CoreDataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF0C9128A92B2C00F52E3A /* CoreDataStorageManager.swift */; };
 		4ECF0C9428AA6FAA00F52E3A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF0C9328AA6FAA00F52E3A /* .gitignore */; };
@@ -71,7 +69,6 @@
 		4E998871289AD04F00F765E0 /* TapBarConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarConfiguration.swift; sourceTree = "<group>"; };
 		4E998878289C155B00F765E0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4E998879289C155B00F765E0 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		4EB12E3F28A168950056917A /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		4EB12E4828A2A7360056917A /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
 		4EB12E4A28A2A7500056917A /* BaseNetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkTask.swift; sourceTree = "<group>"; };
 		4EB12E4C28A2A7610056917A /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
@@ -86,7 +83,6 @@
 		4EB12E5E28A2A7F80056917A /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		4EB12E6028A2A8040056917A /* TokenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenContainer.swift; sourceTree = "<group>"; };
 		4EB12E6228A2A8140056917A /* BaseTokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTokenStorage.swift; sourceTree = "<group>"; };
-		4EB12E6528A2BFF20056917A /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		4ECF0C8E28A9255800F52E3A /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		4ECF0C9128A92B2C00F52E3A /* CoreDataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageManager.swift; sourceTree = "<group>"; };
 		4ECF0C9328AA6FAA00F52E3A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -182,8 +178,6 @@
 				4ED06E1A289FE883001A1324 /* Cells */,
 				4E998867289ACD2300F765E0 /* FavoriteViewController.swift */,
 				4E998868289ACD2300F765E0 /* FavoriteViewController.xib */,
-				4EB12E3F28A168950056917A /* FavoriteModel.swift */,
-				4EB12E6528A2BFF20056917A /* TestModel.swift */,
 			);
 			path = FavoriteModule;
 			sourceTree = "<group>";
@@ -460,7 +454,6 @@
 				4E998863289ACCF700F765E0 /* ProfileViewController.swift in Sources */,
 				4EB12E4928A2A7360056917A /* EmptyModel.swift in Sources */,
 				4ED06E12289F18C6001A1324 /* DetailImageTableViewCell.swift in Sources */,
-				4EB12E6628A2BFF20056917A /* TestModel.swift in Sources */,
 				4E99887A289C155B00F765E0 /* SearchViewController.swift in Sources */,
 				4EB12E5128A2A78A0056917A /* AuthService.swift in Sources */,
 				4ED06E1D289FE8B8001A1324 /* FavoriteCollectionViewCell.swift in Sources */,
@@ -483,7 +476,6 @@
 				4ECF0C9228A92B2C00F52E3A /* CoreDataStorageManager.swift in Sources */,
 				4EB12E5328A2A79A0056917A /* AuthResponseModel.swift in Sources */,
 				4EB12E5928A2A7C40056917A /* PicturesService.swift in Sources */,
-				4EB12E4028A168950056917A /* FavoriteModel.swift in Sources */,
 				4EB12E6128A2A8040056917A /* TokenContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
