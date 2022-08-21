@@ -25,7 +25,6 @@ class StorageManager {
     
     private let viewContext: NSManagedObjectContext
 
-
     private init() {
         viewContext = persistentContainer.viewContext
     }
@@ -36,38 +35,37 @@ class StorageManager {
         let fetchRequest = FavoriteItem.fetchRequest()
         
         do {
-            let pic = try self.viewContext.fetch(fetchRequest)
-            completion(.success(pic))
+            let item = try self.viewContext.fetch(fetchRequest)
+            completion(.success(item))
         } catch let error {
             completion(.failure(error))
         }
     }
-    private var pics: [FavoriteItem] = []
+    private var favoriteItemArray: [FavoriteItem] = []
     
-    private func ff() {
+    private func loadFavoriteData() {
         StorageManager.shared.fetchData { result in
             switch result {
-            case .success(let pics):
-                self.pics = pics
+            case .success(let items):
+                self.favoriteItemArray = items
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
    
-    
     func addPictureFavoriteStatus(model: DetailItemModel) {
-        if pics.isEmpty {
-            let pic = FavoriteItem(context: viewContext)
-            pic.id = model.id
-            pic.favorite = true
+        if favoriteItemArray.isEmpty {
+            let item = FavoriteItem(context: viewContext)
+            item.id = model.id
+            item.favorite = true
             saveContext()
-        } else if pics.contains(where: { $0.id == model.id }) {
-            for elements in 0..<pics.count {
-                if model.id == pics[elements].id {
-                    pics[elements].favorite.toggle()
+        } else if favoriteItemArray.contains(where: { $0.id == model.id }) {
+            for elements in 0..<favoriteItemArray.count {
+                if model.id == favoriteItemArray[elements].id {
+                    favoriteItemArray[elements].favorite.toggle()
                     saveContext()
-        }
+                }
             }
         } else {
             let pic = FavoriteItem(context: viewContext)
@@ -77,22 +75,17 @@ class StorageManager {
         }
     }
     
-
-    
     func initFavoriteStorage() {
-        ff()
+        loadFavoriteData()
     }
     
-    
-    
     func checkIfElementFavorite(id: String) -> Bool {
-        guard let element = pics.first(where: { $0.id == id}) else { return false }
+        guard let element = favoriteItemArray.first(where: { $0.id == id}) else { return false }
         return element.favorite
     }
 
-
-
     // MARK: - Core Data Saving support
+    
     func saveContext() {
         if viewContext.hasChanges {
             do {
